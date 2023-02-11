@@ -1,0 +1,23 @@
+Users
+- Name [Varchar]
+- Email [Varchar]
+- Registration Time/Date [Timestamp]
+- Role [Boolean]
+- Status [Boolean] (Temp)
+
+Bus Types
+- Name [Varchar]
+- Mapped [Boolean]
+- Seats [Number]
+- Status [Boolean]
+- Rating [Number]
+
+Routes
+- Title [Varchar]
+- From [Varchar]
+- To [Varchar]
+- Status [Boolean]
+
+Operations
+- Routes [Varchar]
+- Depart/Arrive Time [Time]
