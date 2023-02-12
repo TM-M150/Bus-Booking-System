@@ -15,11 +15,13 @@ connectDB();
 const app = express();
 
 // MIDDLEWARES
-app.use("/aoth", aothRoute);
-app.use("/bustypes", bustypesRoute);
-app.use("/operations", operationsRoute);
-app.use("/users", usersRoute);
-app.use("/routs", routsRoute);
+app.use(express.json());
+
+app.use("/api/aoth", aothRoute);
+app.use("/api/bustypes", bustypesRoute);
+app.use("/api/operations", operationsRoute);
+app.use("/api/users", usersRoute);
+app.use("/api/routs", routsRoute);
 
 const PORT = process.env.PORT || 3600;
 

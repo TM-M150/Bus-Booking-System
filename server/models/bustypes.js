@@ -1,15 +1,9 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
 
 const BusTypesSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
-  },
-
-  mapped: {
-    type: Boolean,
-    default: no,
   },
 
   seats: {
@@ -27,4 +21,10 @@ const BusTypesSchema = new mongoose.Schema({
     min: 0,
     max: 5,
   },
+
+  routs: {
+    type: [String],
+  },
 });
+
+export default mongoose.model("BusTypes", BusTypesSchema);

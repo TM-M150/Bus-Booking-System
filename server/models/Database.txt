@@ -1,23 +1,34 @@
 Users
-- Name [Varchar]
-- Email [Varchar]
+- Name [String]
+- Email [String]
+- Address [String] (Array)
+- Phone Number [String]
 - Registration Time/Date [Timestamp]
-- Role [Boolean]
-- Status [Boolean] (Temp)
+- Role [String]
+- BusTypes [String] (Array)
+- Routs [String] (Array)
 
 Bus Types
-- Name [Varchar]
-- Mapped [Boolean]
+- Name [String]
 - Seats [Number]
-- Status [Boolean]
+- Status [String]
 - Rating [Number]
+- Routs [String] (Array)
 
-Routes
-- Title [Varchar]
-- From [Varchar]
-- To [Varchar]
-- Status [Boolean]
+Routs
+- Title [String]
+- From [String]
+- To [String]
+- Price [Number]
+- Status [String]
+- Operations [String] (Array)
 
 Operations
-- Routes [Varchar]
+- Routs [String] (Array)
 - Depart/Arrive Time [Time]
+
+Address
+- County [String]
+- Town [String]
+- Street [String]
+- Address Number [Number]
