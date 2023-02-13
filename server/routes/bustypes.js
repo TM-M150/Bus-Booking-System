@@ -6,17 +6,18 @@ import {
   getBusTypes,
   updateBusTypes,
 } from "../controllers/bustypes.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 // CREATE
-router.post("/", createBusTypes);
+router.post("/", verifyAdmin, createBusTypes);
 
 // UPDATE
-router.put("/:id", updateBusTypes);
+router.put("/:id", verifyAdmin, updateBusTypes);
 
 // DELETE
-router.delete("/:id", deleteBusTypes);
+router.delete("/:id", verifyAdmin, deleteBusTypes);
 
 // GET
 router.get("/:id", getBusTypes);
