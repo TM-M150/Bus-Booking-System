@@ -6,6 +6,7 @@ import bustypesRoute from "./routes/bustypes.js";
 import operationsRoute from "./routes/operations.js";
 import usersRoute from "./routes/users.js";
 import routsRoute from "./routes/routs.js";
+import cookieParser from "cookie-parser";
 
 // LOAD CONFIG
 dotenv.config({ path: "./config/config.env" });
@@ -15,14 +16,18 @@ connectDB();
 const app = express();
 
 // MIDDLEWARES
+// Main
+app.use(cookieParser());
 app.use(express.json());
 
+// Routes
 app.use("/api/aoth", aothRoute);
 app.use("/api/bustypes", bustypesRoute);
 app.use("/api/operations", operationsRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/routs", routsRoute);
 
+// Error Handling
 app.use(function (err, req, res, next) {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
