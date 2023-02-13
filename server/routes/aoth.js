@@ -1,9 +1,8 @@
 import express from "express";
+import { register } from "../controllers/aoth.js";
 
 const router = express.Router();
 
-router.get("/", function (req, res) {
-  res.send("Hompage")
-});
+router.post("/register", register);
 
 export default router;

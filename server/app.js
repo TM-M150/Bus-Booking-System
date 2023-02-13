@@ -23,6 +23,17 @@ app.use("/api/operations", operationsRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/routs", routsRoute);
 
+app.use(function (err, req, res, next) {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong!";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack,
+  });
+});
+
 const PORT = process.env.PORT || 3600;
 
 app.listen(

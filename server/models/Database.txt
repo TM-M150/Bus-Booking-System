@@ -1,34 +1,36 @@
 Users
-- Name [String]
-- Email [String]
-- Address [String] (Array)
-- Phone Number [String]
-- Registration Time/Date [Timestamp]
-- Role [String]
-- BusTypes [String] (Array)
-- Routs [String] (Array)
+- Name: String
+- Email: String
+- Address: [String] 
+- Password: String
+- Phone Number: String
+- DOB: Date/Time
+- isAdmin: Boolean
+- BusTypes: [String] 
+- Routs: [String]
+- Timestamps 
 
 Bus Types
-- Name [String]
-- Seats [Number]
-- Status [String]
-- Rating [Number]
-- Routs [String] (Array)
+- Name: String
+- Seats: Number
+- Status: String
+- Rating: Number
+- Routs: [String]
 
 Routs
-- Title [String]
-- From [String]
-- To [String]
-- Price [Number]
-- Status [String]
-- Operations [String] (Array)
+- Title: String
+- From: String
+- To: String
+- Price: Number
+- Status: String
+- Operations: [String]
 
 Operations
-- Routs [String] (Array)
-- Depart/Arrive Time [Time]
+- Routs: String 
+- Depart/Arrive Time: Time
 
 Address
-- County [String]
-- Town [String]
-- Street [String]
-- Address Number [Number]
+- County: String
+- Town: String
+- Street: String
+- Address Number: Number
