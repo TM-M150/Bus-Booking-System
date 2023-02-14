@@ -1,16 +1,5 @@
 import User from "../models/users.js";
 
-export const createUser = async function (req, res, next) {
-  const newUser = new User(req.body);
-
-  try {
-    const savedUser = await newUser.save();
-    res.status(200).json(savedUser);
-  } catch (err) {
-    next(err);
-  }
-};
-
 export const updateUser = async function (req, res, next) {
   try {
     const updateUser = await User.findByIdAndUpdate(
@@ -27,7 +16,7 @@ export const updateUser = async function (req, res, next) {
 export const deleteUser = async function (req, res, next) {
   try {
     await User.findByIdAndDelete(req.params.id);
-    res.status(200).json("Bus Successfully Deleted.");
+    res.status(200).json("User Successfully Deleted.");
   } catch (err) {
     next(err);
   }

@@ -8,27 +8,28 @@ export const verifyToken = function (req, res, next) {
   }
 
   jwt.verify(token, process.env.JWT, function (err, user) {
-    if (err) return next(createError(403, "Token ins invalid"));
+    if (err) return next(createError(403, "Token is invalid!"));
     req.user = user;
+    next();
   });
 };
 
 export const verifyUser = function (req, res, next) {
-  verifyToken(req, res, next, function () {
+  verifyToken(req, res, function () {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
-      return next(createError(403, "You are not authorized"));
+      return next(createError(403, "You are not authorized!"));
     }
   });
 };
 
 export const verifyAdmin = function (req, res, next) {
-  verifyToken(req, res, next, function () {
+  verifyToken(req, res, function () {
     if (req.user.isAdmin) {
       next();
     } else {
-      return next(createError(403, "You are not authorized"));
+      return next(createError(403, "You are not authorized!"));
     }
   });
 };
