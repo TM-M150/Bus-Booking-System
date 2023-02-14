@@ -15,7 +15,7 @@ export const verifyToken = function (req, res, next) {
 };
 
 export const verifyUser = function (req, res, next) {
-  verifyToken(req, res, function () {
+  verifyToken(req, res, next, function () {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
@@ -25,7 +25,7 @@ export const verifyUser = function (req, res, next) {
 };
 
 export const verifyAdmin = function (req, res, next) {
-  verifyToken(req, res, function () {
+  verifyToken(req, res, next, function () {
     if (req.user.isAdmin) {
       next();
     } else {
