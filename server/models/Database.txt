@@ -33,4 +33,4 @@ Address
 - County: String
 - Town: String
 - Street: String
-- Address Number: Number
+- Address: Number
