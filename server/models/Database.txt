@@ -1,18 +1,21 @@
 Users
 - Name: String
 - Email: String
-- Address: [String] 
+- Addresses: [String] 
 - Password: String
 - Phone Number: String
-- DOB: Date/Time
 - isAdmin: Boolean
-- BusTypes: [String] 
-- Routs: [String]
 - Timestamps 
 
-Bus Types
+Address
+- County: String
+- Town: String
+- Street: String
+- Address: Number
+
+Bus
 - Name: String
-- Seats: Number
+- Seats: Number (Special)
 - Status: String
 - Rating: Number
 - Routs: [String]
@@ -23,14 +26,6 @@ Routs
 - To: String
 - Price: Number
 - Status: String
-- Operations: [String]
-
-Operations
-- Routs: String 
-- Depart/Arrive Time: Time
-
-Address
-- County: String
-- Town: String
-- Street: String
-- Address: Number
+- ArrivalTime: Time
+- DepartTime: Time
+- Busses: [String]

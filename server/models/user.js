@@ -1,19 +1,19 @@
 import mongoose from "mongoose";
 
-const UsersSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
-    name: {
+    Name: {
       type: String,
       require: true,
     },
 
-    email: {
+    Email: {
       type: String,
       require: true,
       unique: true,
     },
 
-    address: {
+    Addresses: {
       type: [String],
     },
 
@@ -22,7 +22,7 @@ const UsersSchema = new mongoose.Schema(
       require: true,
     },
 
-    phone: {
+    PhoneNumber: {
       type: Number,
       require: true,
     },
@@ -31,16 +31,8 @@ const UsersSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-
-    bustypes: {
-      type: [String],
-    },
-
-    routs: {
-      type: [String],
-    },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", UsersSchema);
+export default mongoose.model("User", UserSchema);

@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
 
-const AddresssSchema = new mongoose.Schema({
-  county: {
+const AddressSchema = new mongoose.Schema({
+  County: {
     type: String,
   },
 
-  town: {
+  Town: {
     type: String,
   },
 
-  street: {
+  Street: {
     type: String,
   },
 
-  address: {
+  Address: {
     type: String,
   },
 });
 
-export default mongoose.model("Address", UsersSchema);
+export default mongoose.model("Address", AddressSchema);

@@ -1,4 +1,4 @@
-import User from "../models/users.js";
+import User from "../models/user.js";
 
 export const updateUser = async function (req, res, next) {
   try {
@@ -24,14 +24,14 @@ export const deleteUser = async function (req, res, next) {
 
 export const getUser = async function (req, res, next) {
   try {
-    const BusType = await User.findById(req.params.id);
-    res.status(200).json(BusType);
+    const getUser = await User.findById(req.params.id);
+    res.status(200).json(getUser);
   } catch (err) {
     next(err);
   }
 };
 
-export const getallUser = async function (req, res, next) {
+export const getUsers = async function (req, res, next) {
   try {
     const Users = await User.find();
     res.status(200).json(Users);
