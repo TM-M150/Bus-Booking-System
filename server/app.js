@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import aothRoute from "./routes/aoth.js";
-import bustypesRoute from "./routes/bustypes.js";
-import operationsRoute from "./routes/operations.js";
-import usersRoute from "./routes/users.js";
-import routsRoute from "./routes/routs.js";
+import busRoute from "./routes/bus.js";
+import userRoute from "./routes/user.js";
+import roadRoute from "./routes/road.js";
+import addressRoute from "./routes/address.js";
 import cookieParser from "cookie-parser";
 
 // LOAD CONFIG
@@ -22,10 +22,10 @@ app.use(express.json());
 
 // Routes
 app.use("/api/aoth", aothRoute);
-app.use("/api/bustypes", bustypesRoute);
-app.use("/api/operations", operationsRoute);
-app.use("/api/users", usersRoute);
-app.use("/api/routs", routsRoute);
+app.use("/api/address", addressRoute);
+app.use("/api/bus", busRoute);
+app.use("/api/user", userRoute);
+app.use("/api/route", roadRoute);
 
 // Error Handling
 app.use(function (err, req, res, next) {

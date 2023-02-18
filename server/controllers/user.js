@@ -1,15 +1,4 @@
-import User from "../models/users.js";
-
-export const createUser = async function (req, res, next) {
-  const newUser = new User(req.body);
-
-  try {
-    const savedUser = await newUser.save();
-    res.status(200).json(savedUser);
-  } catch (err) {
-    next(err);
-  }
-};
+import User from "../models/user.js";
 
 export const updateUser = async function (req, res, next) {
   try {
@@ -27,7 +16,7 @@ export const updateUser = async function (req, res, next) {
 export const deleteUser = async function (req, res, next) {
   try {
     await User.findByIdAndDelete(req.params.id);
-    res.status(200).json("Bus Successfully Deleted.");
+    res.status(200).json("User Successfully Deleted.");
   } catch (err) {
     next(err);
   }
@@ -35,14 +24,14 @@ export const deleteUser = async function (req, res, next) {
 
 export const getUser = async function (req, res, next) {
   try {
-    const BusType = await User.findById(req.params.id);
-    res.status(200).json(BusType);
+    const getUser = await User.findById(req.params.id);
+    res.status(200).json(getUser);
   } catch (err) {
     next(err);
   }
 };
 
-export const getallUser = async function (req, res, next) {
+export const getUsers = async function (req, res, next) {
   try {
     const Users = await User.find();
     res.status(200).json(Users);
