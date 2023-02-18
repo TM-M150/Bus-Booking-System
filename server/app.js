@@ -23,9 +23,9 @@ app.use(express.json());
 // Routes
 app.use("/api/aoth", aothRoute);
 app.use("/api/address", addressRoute);
-app.use("/api/bustypes", busRoute);
-app.use("/api/users", userRoute);
-app.use("/api/routes", roadRoute);
+app.use("/api/bus", busRoute);
+app.use("/api/user", userRoute);
+app.use("/api/route", roadRoute);
 
 // Error Handling
 app.use(function (err, req, res, next) {

@@ -11,16 +11,16 @@ import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 const router = express.Router();
 
 // CREATE
-router.post("/:Userid", verifyUser, verifyAdmin, createAddress);
+router.post("/:userid", verifyUser, createAddress);
 
 // UPDATE
-router.put("/:id", verifyUser, verifyAdmin, updateAddress);
+router.put("/:id", verifyUser, updateAddress);
 
 // DELETE
-router.delete("/:id/:Userid", verifyUser, verifyAdmin, deleteAddress);
+router.delete("/:id/:userid", verifyUser, deleteAddress);
 
 // GET
-router.get("/:id", verifyUser, verifyAdmin, getAddress);
+router.get("/:id", verifyUser, getAddress);
 
 // GET ALL
 router.get("/", verifyAdmin, getAddresses);

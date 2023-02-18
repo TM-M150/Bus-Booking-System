@@ -17,10 +17,6 @@ const BusSchema = new mongoose.Schema(
       min: 0,
       max: 5,
     },
-
-    Routes: {
-      type: [String],
-    },
     seats: [{ number: Number, unavailbleDates: { type: [Date] } }],
   },
   { timestamps: true }

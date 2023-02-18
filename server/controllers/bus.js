@@ -9,7 +9,7 @@ export const createBus = async function (req, res, next) {
     const savedBus = await newBus.save();
     try {
       await Route.findByIdAndUpdate(routeID, {
-        $push: { Bus: savedBus._id },
+        $push: { Busses: savedBus._id },
       });
     } catch (err) {
       next(err);
@@ -40,7 +40,7 @@ export const deleteBus = async function (req, res, next) {
     await Bus.findByIdAndDelete(req.params.id);
     try {
       await Route.findByIdAndUpdate(routeID, {
-        $pull: { Bus: req.params.id },
+        $pull: { Busses: req.params.id },
       });
     } catch (err) {
       next(err);

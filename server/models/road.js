@@ -9,31 +9,36 @@ const RouteSchema = new mongoose.Schema({
   From: {
     type: String,
     require: true,
+    trim: true,
   },
 
   To: {
     type: String,
     require: true,
+    trim: true,
   },
 
   Price: {
-    type: String,
+    type: Number,
     currency: "KSH",
   },
 
   Status: {
-    type: Date,
+    type: String,
     reqiure: true,
+    trim: true,
   },
 
   ArriveTime: {
-    type: Date,
+    type: String,
     reqiure: true,
+    trim: true,
   },
 
   DepartTime: {
     type: String,
     reqiure: true,
+    trim: true,
   },
 
   Busses: {
